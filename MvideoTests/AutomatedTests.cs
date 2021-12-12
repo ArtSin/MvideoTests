@@ -30,16 +30,12 @@ namespace MvideoTests
             driver.FindElement(By.XPath("//input[contains(@class, 'range__price') and @name='minPrice']")).Clear();
             driver.FindElement(By.XPath("//input[contains(@class, 'range__price') and @name='minPrice']")).SendKeys("15000");
             driver.FindElement(By.XPath("//input[contains(@class, 'range__price') and @name='minPrice']")).SendKeys(Keys.Enter);
-            new WebDriverWait(driver, TimeSpan.FromSeconds(3))
-                .Until(x => driver.FindElements(By.CssSelector(".animated-background")).Any());
             new WebDriverWait(driver, TimeSpan.FromSeconds(30))
                 .Until(x => !driver.FindElements(By.CssSelector(".animated-background")).Any());
 
             driver.FindElement(By.XPath("//input[contains(@class, 'range__price') and @name='maxPrice']")).Clear();
             driver.FindElement(By.XPath("//input[contains(@class, 'range__price') and @name='maxPrice']")).SendKeys("30000");
             driver.FindElement(By.XPath("//input[contains(@class, 'range__price') and @name='maxPrice']")).SendKeys(Keys.Enter);
-            new WebDriverWait(driver, TimeSpan.FromSeconds(3))
-                .Until(x => driver.FindElements(By.CssSelector(".animated-background")).Any());
             new WebDriverWait(driver, TimeSpan.FromSeconds(30))
                 .Until(x => !driver.FindElements(By.CssSelector(".animated-background")).Any());
 
